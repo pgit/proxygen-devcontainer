@@ -1,0 +1,14 @@
+{
+  "cmake.configureOnOpen": false,
+  "clangd.arguments": [
+    "--compile-commands-dir",
+    "proxygen/proxygen/_build"
+  ],
+  "testMate.cpp.test.advancedExecutables": [
+    {
+      "pattern": "proxygen/proxygen/{_build}/**/*Tests",
+      "cwd": "${workspaceDirectory}/proxygen/proxygen"
+    }
+  ],
+  "terminal.integrated.cwd": "proxygen/proxygen",
+}
