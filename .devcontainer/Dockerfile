@@ -1,16 +1,16 @@
 # -------------------------------------------------------------------------------------------------
 #
-# build LLVM clangd on CentOS 8
+# build facebook/proxygen on CentOS 8
 #
 # -------------------------------------------------------------------------------------------------
 
-FROM centos:8 as centos-updated
+FROM centos:8 as centos-updated:8
 
 RUN dnf update -y && dnf clean all
 
 # -------------------------------------------------------------------------------------------------
 
-FROM centos-updated AS builder
+FROM centos-updated:8 AS builder
 
 RUN dnf update -y && \
     dnf install -y sudo unzip git subversion zlib-devel libxml2-devel && \
@@ -26,6 +26,8 @@ RUN dnf install -y epel-release && \
     dnf install -y libsodium-devel libunwind-devel libdwarf-static && \
     dnf install -y libarchive libzstd-devel cmake && \
     dnf clean all
+
+RUN dnf install -y doxygen && dnf clean all
 
 # -------------------------------------------------------------------------------------------------
 #
