@@ -13,7 +13,8 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-vscode.cpptools",
-		"llvm-vs-code-extensions.vscode-clangd"
+		"llvm-vs-code-extensions.vscode-clangd",
+		"matepek.vscode-catch2-test-adapter"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
